@@ -45,19 +45,19 @@ if (isset($_GET["month"])) {
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 gap-5 w-full z-0">
 
          <!-- CHART 1 - Évolution temporelle de la consommation d'énergie en Lozère -->
-         <div class="bg-gray-100 dark:bg-gray-800 p-6 md:col-span-2 lg:col-span-6 rounded-lg drop-shadow-md row-span-3">
+         <div class="bg-gray-100 dark:bg-gray-800 p-6 md:col-span-2 lg:col-span-6 rounded-lg drop-shadow-md row-span-3 mt-0">
             <div class="mt-[5vh]">
-               <canvas id="chart__1" class="m-0" height="120"></canvas>
+               <canvas id="chart__1" class="m-0" style="max-height: 25vh; max-width: 100%;"></canvas>
             </div>
             <!-- CONSO MOYENNE -->
-            <div class="flex justify-between items-center gap-10 w-full mt-8">
+            <div class="flex items-center gap-10 w-full mt-8">
                <p id="title5">Moyenne de consommation (de 2011 à 2021) : </p>
-               <h3 class="moyenneConso lg:text-8xl md:text-7xl text-7xl"></h3>
+               <h3 class="moyenneConso lg:text-6xl md:text-5xl text-5xl" style="text-decoration: underline;"></h3>
             </div>
             <!-- CONSO HAUTE -->
-            <div class="flex justify-between items-center gap-10 w-full mt-8">
+            <div class="flex items-center gap-10 w-full mt-8">
                <p id="title5">Consommation la plus haute (2021) : </p>
-               <h3 class="consoHaute lg:text-8xl md:text-7xl text-7xl"></h3>
+               <h3 class="consoHaute lg:text-6xl md:text-5xl text-5xl" style="text-decoration: underline;"></h3>
             </div>
          </div>
 
@@ -103,35 +103,38 @@ if (isset($_GET["month"])) {
             </form>
 
             <div>
-               <canvas id="chart__2"></canvas>
+               <canvas id="chart__2" style="max-height: 32vh; max-width: 100%;"></canvas>
             </div>
             <hr>
             <!-- CONSO GLOBALE PAR ANNÉE -->
-            <div class="flex items-center h-full w-full flex-col mt-8">
-               <p id="title5">Consommation globale en Lozère (en MWh)</p>
-               <h3 class="consoTot lg:text-8xl md:text-7xl text-7xl h-auto"></h3>
+            <div class="flex h-full w-full mt-8 gap-10">
+               <p id="title5">Consommation globale en Lozère: </p>
+               <h3 class="consoTot lg:text-6xl md:text-5xl text-5xl h-auto" style="text-decoration: underline;"></h3>
             </div>
          </div>
 
          <!-- CHART 3 - Comparaison de la production d'énergie entre sources renouvelables et non renouvelables -->
          <div class="bg-gray-100 dark:bg-gray-800 p-6 lg:col-span-3 rounded-lg drop-shadow-md row-span-2">
-            <form>
-               <label for="month">Mois :</label>
-               <input type="month" min="2021-01" max="2022-05" <?php echo "value=" . $globalMonth ?> id="month" class="fetchData2" name="month">
-            </form>
+            <div class="flex ">
+               <form>
+                  <label for="month">Mois :</label>
+                  <input type="month" min="2021-01" max="2022-05" <?php echo "value=" . $globalMonth ?> id="month" class="fetchData2" name="month">
+               </form>
+               <p>Énergie</p>
+            </div>
             <div class="w-full">
 
-               <canvas id="chart__3"></canvas>
+               <canvas id="chart__3" style="max-height: 25vh; max-width: 100%;"></canvas>
                <div class="flex justify-center items-center">
                   <div class="w-full flex justify-center">
                      <div class="flex justify-center gap-10 sm:gap-40 md:gap-20 lg:top-[62%] top-[70%] w-full dark:text-white lg:text-2xl md:text-xl md:top-[62%] sm:top-[55%] text-xl">
                         <div>
-                           <p class="text-[12px]">Energie renouvelables</p>
-                           <p class=" energyRenouvelables"></p>
+                           <p class="text-[12px]">Renouvelables</p>
+                           <p class=" energyRenouvelables" style="text-decoration: underline;"></p>
                         </div>
                         <div class="flex items-end flex-col">
-                           <p class="text-[12px]">Energie non-renouvelables</p>
-                           <p class="energyNonRenouvelables"></p>
+                           <p class="text-[12px]">Non-renouvelables</p>
+                           <p class="energyNonRenouvelables" style="text-decoration: underline;"></p>
                         </div>
                      </div>
                   </div>
@@ -142,7 +145,7 @@ if (isset($_GET["month"])) {
          <!-- CHART 4 - Moyenne de consommation en fonction de l'heure -->
          <div class="bg-gray-100 dark:bg-gray-800 p-6 lg:col-span-7 md:col-span-2 rounded-lg drop-shadow-md row-span-2">
             <div>
-               <canvas id="chart__4"></canvas>
+               <canvas id="chart__4" style="max-height: 35vh; max-width: 100%;"></canvas>
             </div>
          </div>
       </div>

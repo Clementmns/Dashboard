@@ -80,6 +80,7 @@ function createCharts() {
                   },
                },
                responsive: true,
+               maintainAspectRatio: true,
             },
          });
 
@@ -146,6 +147,7 @@ function createCharts() {
                   },
                },
                responsive: true,
+               maintainAspectRatio: true,
             },
          });
 
@@ -202,6 +204,7 @@ function createCharts() {
                   },
                },
                responsive: true,
+               maintainAspectRatio: true,
             },
          });
 
@@ -250,6 +253,7 @@ function createCharts() {
                   },
                },
                responsive: true,
+               maintainAspectRatio: true,
             },
          });
 
@@ -306,5 +310,5 @@ function calculateData3(dataChart3) {
 
 function totFormat(valeur) {
    const millions = Math.round((valeur / 1000) * 10) / 10;
-   return millions + "K";
+   return millions + "K MWh";
 }
